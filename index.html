@@ -1,1 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan David Espitia | Portafolio</title>
+  <style>
+    :root {
+      --azul: #1e3a5f;
+      --azul-claro: #2f6fb3;
+      --acento: #3fb37f;
+      --texto: #1f2937;
+      --suave: #6b7280;
+      --fondo: #f5f7fa;
+      --borde: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--texto);
+      background: var(--fondo);
+    }
+    a { color: var(--azul-claro); }
+    .contenedor { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
+    /* ---------- Portada ---------- */
+    .portada {
+      background: linear-gradient(135deg, #16304f, #2f6fb3);
+      color: #fff;
+      padding: 56px 0 64px;
+    }
+    .portada .contenedor {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .portada img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.85);
+    }
+    .portada h1 { margin: 0 0 6px; font-size: 2.2em; line-height: 1.2; }
+    .portada .rol { margin: 0 0 4px; font-size: 1.1em; opacity: 0.95; }
+    .portada .lugar { margin: 0 0 18px; opacity: 0.8; }
+    .botones { display: flex; gap: 10px; flex-wrap: wrap; }
+    .boton {
+      display: inline-block;
+      padding: 9px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    .boton.lleno { background: #fff; color: var(--azul); }
+    .boton.borde { border: 2px solid #fff; color: #fff; }
+
+    /* ---------- Secciones ---------- */
+    section { padding: 40px 0 8px; }
+    h2 {
+      color: var(--azul);
+      font-size: 1.5em;
+      margin: 0 0 18px;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 4px;
+      margin-top: 6px;
+      border-radius: 2px;
+      background: var(--acento);
+    }
+    .tarjeta {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+    }
+    .tarjeta > p:first-child { margin-top: 0; }
+    .tarjeta > p:last-child { margin-bottom: 0; }
+
+    /* ---------- Formación ---------- */
+    .linea { border-left: 3px solid var(--borde); padding-left: 20px; }
+    .hito { position: relative; margin-bottom: 18px; }
+    .hito::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--azul-claro);
+    }
+    .hito h3 { margin: 0; font-size: 1.05em; }
+    .hito p { margin: 2px 0 0; color: var(--suave); }
+
+    /* ---------- Habilidades ---------- */
+    .grupo-habilidades {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .grupo-habilidades h3 { margin: 0 0 10px; font-size: 1em; color: var(--azul); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      background: #eaf2fb;
+      color: var(--azul);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.9em;
+    }
+    .chip.verde { background: #e6f6ee; color: #1f7a52; }
+
+    /* ---------- Proyectos ---------- */
+    .proyecto h3 { margin: 0 0 8px; color: var(--azul); }
+    .proyecto p { margin: 6px 0; }
+    .estado {
+      display: inline-block;
+      font-size: 0.75em;
+      font-weight: 600;
+      background: #fff4e0;
+      color: #8a5a00;
+      border-radius: 999px;
+      padding: 2px 10px;
+      vertical-align: middle;
+    }
+    .etiquetas { margin-top: 12px; }
+
+    footer {
+      text-align: center;
+      color: var(--suave);
+      font-size: 0.9em;
+      padding: 32px 0 40px;
+    }
+
+    @media (max-width: 600px) {
+      .portada { text-align: center; padding: 40px 0 48px; }
+      .portada .contenedor { justify-content: center; }
+      .botones { justify-content: center; }
+      .portada h1 { font-size: 1.8em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <header class="portada">
+    <div class="contenedor">
+      <img src="foto.jpg" alt="Foto de Juan David Espitia Gutierrez">
+      <div>
+        <h1>Juan David Espitia Gutierrez</h1>
+        <p class="rol">Estudiante de Ingeniería de Software · Universidad de La Salle</p>
+        <p class="lugar">Bogotá, Colombia</p>
+        <div class="botones">
+          <a class="boton lleno" href="https://www.linkedin.com/in/TU-URL-DE-LINKEDIN/">LinkedIn</a>
+          <a class="boton borde" href="https://github.com/espitia2005fn-cmd">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <!-- SOBRE MÍ -->
+    <section>
+      <h2>Sobre mí</h2>
+      <div class="tarjeta">
+        <p>Estudio Ingeniería de Software en la Universidad de La Salle. Antes terminé un programa
+        tecnológico en la Universidad de Cundinamarca (UDEC) y homologué materias para continuar
+        mi formación como ingeniero.</p>
+        <p>Estoy aprendiendo a organizar proyectos con Git y GitHub, a crear páginas web con HTML y CSS
+        y a construir prototipos con herramientas de inteligencia artificial. Me interesa usar el
+        software para resolver problemas reales en Colombia, especialmente en el campo.</p>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section>
+      <h2>Formación</h2>
+      <div class="tarjeta">
+        <div class="linea">
+          <div class="hito">
+            <h3>Ingeniería de Software</h3>
+            <p>Universidad de La Salle · En curso</p>
+          </div>
+          <div class="hito">
+            <h3>Tecnólogo (NOMBRE DEL PROGRAMA)</h3>
+            <p>Universidad de Cundinamarca – UDEC · Terminado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section>
+      <h2>Habilidades</h2>
+      <div class="grupo-habilidades">
+        <div class="tarjeta">
+          <h3>Ya las uso de forma autónoma</h3>
+          <div class="chips">
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">Organización de proyectos</span>
+            <span class="chip verde">Trabajo en equipo</span>
+            <span class="chip verde">Exposiciones orales</span>
+          </div>
+        </div>
+        <div class="tarjeta">
+          <h3>Estoy aprendiendo</h3>
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">Prototipado con IA</span>
+            <span class="chip">Levantamiento de requerimientos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section>
+      <h2>Proyectos</h2>
+
+      <article class="tarjeta proyecto">
+        <h3>AgroIA <span class="estado">En desarrollo</span></h3>
+        <p><strong>Objetivo:</strong> ayudar a quienes empiezan a cultivar a saber, con una foto,
+        si su planta está sana y cómo cuidarla según el tipo de cultivo.</p>
+        <p><strong>Mi contribución:</strong> propuse la idea y diseñé la app en la materia
+        Ingeniería en Contexto. Estoy construyendo el prototipo.</p>
+        <p><strong>Aprendizaje:</strong> convertir un problema colombiano en requisitos concretos
+        de una aplicación. Falta terminar el prototipo y probarlo con usuarios.</p>
+        <div class="chips etiquetas">
+          <span class="chip">Lovable</span>
+          <span class="chip">IA de visión (planeado)</span>
+        </div>
+      </article>
+
+      <article class="tarjeta proyecto">
+        <h3>Comercialización de pequeños productores en Guasca</h3>
+        <p><strong>Objetivo:</strong> entender por qué los productores de la vereda La Trinidad
+        (Guasca, Cundinamarca) no logran vender su cosecha.</p>
+        <p><strong>Mi contribución:</strong> investigación y trabajo de campo con la Junta de Acción
+        Comunal, en equipo con un compañero, para la materia Proyecto Integrador I.</p>
+        <p><strong>Aprendizaje:</strong> escuchar a los usuarios antes de proponer una solución
+        de software.</p>
+        <div class="chips etiquetas">
+          <span class="chip">Investigación de campo</span>
+          <span class="chip">Trabajo con comunidad</span>
+        </div>
+      </article>
+
+      <article class="tarjeta proyecto">
+        <h3>Reto: negocio de software para la construcción</h3>
+        <p><strong>Objetivo:</strong> diseñar una empresa de software para obras civiles e
+        interventorías, que hoy no tienen una forma digital y detallada de ver el estado de sus obras.</p>
+        <p><strong>Mi contribución:</strong> definición del problema y de los clientes, en un equipo
+        de tres personas, con una presentación oral final.</p>
+        <p><strong>Aprendizaje:</strong> pensar el software como un negocio que responde a una
+        necesidad concreta de un cliente.</p>
+        <div class="chips etiquetas">
+          <span class="chip">Modelo de negocio</span>
+          <span class="chip">Trabajo en equipo</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- CONTACTO -->
+    <section>
+      <h2>Contacto</h2>
+      <div class="tarjeta">
+        <p>Puedes conocer más sobre mi formación e intereses en mi
+        <a href="https://www.linkedin.com/in/TU-URL-DE-LINKEDIN/">perfil de LinkedIn</a>
+        o ver mi código en <a href="https://github.com/espitia2005fn-cmd">GitHub</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2026 Juan David Espitia Gutierrez</footer>
+
+</body>
+</html>
